@@ -1,62 +1,77 @@
 import 'package:flutter/material.dart';
-class Homepage extends StatelessWidget {
-  const Homepage({super.key, required this.title});
-  final String title;
-  @override
-  Widget build(BuildContext context) {
+import 'package:google_fonts/google_fonts.dart';
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFE6F4F1),
+
       appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Colors.blue,
+        title: Text(
+          "Homepage",
+          style: GoogleFonts.poppins(
+            fontSize: 26,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color(0xFF2A9D8F),
         foregroundColor: Colors.white,
-        leading: const Icon(Icons.home),
+
+        leading: Icon(
+          Icons.home,
+          size: 25,
+        ),
+
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search),
+            icon: Icon(Icons.search),
+            tooltip: "Search",
           ),
+
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.person),
+            icon: Icon(Icons.person),
+            tooltip: "Profile",
           ),
         ],
       ),
+
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.home,
-              size: 80,
-              color: Colors.blue,
+        child: Text(
+          "Hello welcome to our project",
+          textAlign: TextAlign.center,
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              fontSize: 28,
+              color: Color(0xFF264653), 
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 20),
-            const Text(
-              "Welcome to My Homepage",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              "This is a simple Flutter application.",
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            const SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Get Started"),
-            ),
-          ],
+          ),
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Icon(Icons.add),
+        backgroundColor: const Color.fromARGB(255, 9, 106, 96), 
+        foregroundColor: Colors.white,
+        hoverColor: Colors.tealAccent,
+
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+
+        tooltip: "Add",
+
+        child: Icon(
+          Icons.add,
+          size: 30,
+        ),
       ),
     );
   }
+
 }
